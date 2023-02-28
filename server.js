@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const cors = require('cors');
+const axios = require('axios')
 const { json } = require('express');
 
 app.use(
@@ -19,19 +20,22 @@ let randomArray = [5];
 let interval = setInterval(callIt, 5 * 1000 * 60);
 
 function callIt() {
-  fetch(port + '/req1', {
-    method: 'POST', 
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      value: Math.random()*5 + randomArray[0]
-    })
+  axios.post(port + '/req1', {
+    value: Math.random()*5 + randomArray[0]
   })
+  // fetch(port + '/req1', {
+  //   method: 'POST', 
+  //   headers: {
+  //     'Content-Type': 'application/json'
+  //   },
+  //   body: JSON.stringify({
+  //     value: Math.random()*5 + randomArray[0]
+  //   })
+  // })
   .then((res) => res.json())
   .then(data => randomArray[0] = [Math.random()*data['value']])
   .catch(err => console.log(err))
-  .finally(() => console.log('finished'))
+  .finally(() => console.log(randomArray))
 }
 
 app.get('/req1', (req, res) => {
