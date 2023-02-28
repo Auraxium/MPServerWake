@@ -14,7 +14,7 @@ app.use(
 );
 app.use(express.json())
 
-const port = 'https://mataparkserver.onrender.com';
+const port = 'https://matapark-server.onrender.com';
 let randomArray = [5];
 
 callIt()
@@ -33,8 +33,7 @@ function callIt() {
   //     value: Math.random()*5 + randomArray[0]
   //   })
   // })
-  .then((res) => res.json())
-  .then(data => randomArray = [Math.random()*data['value']])
+  .then(data => randomArray = [Math.random()*data.data['value']])
   .catch(err => console.log('err'))
   .finally(() => console.log(randomArray))
 }
