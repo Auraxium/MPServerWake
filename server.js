@@ -17,6 +17,7 @@ app.use(express.json())
 const port = 'https://mataparkserver.onrender.com';
 let randomArray = [5];
 
+callIt()
 let interval = setInterval(callIt, 5 * 1000 * 60);
 
 function callIt() {
