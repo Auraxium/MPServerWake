@@ -34,8 +34,8 @@ function callIt() {
   //   })
   // })
   .then((res) => res.json())
-  .then(data => randomArray[0] = [Math.random()*data['value']])
-  .catch(err => console.log(err))
+  .then(data => randomArray = [Math.random()*data['value']])
+  .catch(err => console.log('err'))
   .finally(() => console.log(randomArray))
 }
 
