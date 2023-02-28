@@ -38,7 +38,7 @@ function callIt() {
   .finally(() => console.log(randomArray))
 }
 
-app.get('/req1', (req, res) => {
+app.post('/req1', (req, res) => {
   let val = req.body['value'];
   randomArray = [Math.random() * val]
   return res.json({value: Math.random() * randomArray[0]})
