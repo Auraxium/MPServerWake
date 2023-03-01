@@ -14,7 +14,7 @@ app.use(
 );
 app.use(express.json())
 
-const port = 'https://matapark-server.onrender.com';
+const port = 'https://mataparkserver.onrender.com';
 let randomArray = [5];
 
 callIt()
