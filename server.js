@@ -24,15 +24,6 @@ function callIt() {
   axios.post(port + '/req1', {
     value: Math.random()*5 + randomArray[0]
   })
-  // fetch(port + '/req1', {
-  //   method: 'POST', 
-  //   headers: {
-  //     'Content-Type': 'application/json'
-  //   },
-  //   body: JSON.stringify({
-  //     value: Math.random()*5 + randomArray[0]
-  //   })
-  // })
   .then(data => randomArray = [Math.random()*data.data['value']])
   .catch(err => console.log('err'))
   .finally(() => console.log(randomArray))
