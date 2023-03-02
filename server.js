@@ -18,7 +18,7 @@ const port = 'https://mataparkserver.onrender.com';
 let randomArray = [5];
 
 callIt()
-let interval = setInterval(callIt, 11 * 1000 * 60);
+let interval = setInterval(callIt, 9 * 1000 * 60);
 
 function callIt() {
   axios.post(port + '/req1', {
